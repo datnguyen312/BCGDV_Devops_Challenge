@@ -47,7 +47,7 @@ Challenge tips:
 - Visit [http://localhost:5000](http://localhost:5000) in a browser to confirm the API is running
 - Run `test.sh` to execute tests
 
-# Changes made _(to the original code repository)_ by Shahzad Chaudhry
+# Changes made _(to the original code repository; .zip)_ by Shahzad Chaudhry
 - Added a vagrantfile that creates two Ubuntu VMs which form a docker swarm mode cluster _(1x master and 1x worker)_ for testing API locally
   - Ubuntu 16.04.5 LTS (Xenial Xerus)
   - Docker version 18.06.0-ce _(as of 28/07/2018)_
@@ -68,6 +68,16 @@ Challenge tips:
   - Shows an example how multiple stacks can be started. This means running multiple api versions at the same time
 - Added "docker-compose.portainer.yml" that can be used to start [Portainer](https://portainer.io/) which is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
 
+## Part 1 answer
+This section addresses how to deploy changes in this repository to an environment in AWS. This all need to be automated; push changes to this repo -> Jenkins job is triggered to build code -> build artifact is then deployed in AWS
+- Firstly, AWS infra will need to be setup. See ref no.2 blow for a link on how to setup a docker swarm cluster using "Docker Community Edition (CE) for AWS". Here are some of the benefits for such a cluster:
+  - Native to Docker
+  - Skip the boilerplate and maintenance work
+  - Minimal, Docker-focused base
+  - Self-cleaning and self-healing
+  - Logging native to the platforms
+
 # References
-- See `https://github.com/shazChaudhry/vagrant` repo for instructions on how to create Ubuntu VMs using Vagrant and how to start Portainer
-- See `https://github.com/shazChaudhry/docker-jenkins` repo for instructions on how to run Jenkins in docker swarm mode. This docekr image includes [Blue Ocean plugin](https://jenkins.io/doc/book/blueocean/)
+1. See https://github.com/shazChaudhry/vagrant repo for instructions on how to create Ubuntu VMs using Vagrant and how to start Portainer for local testing
+1. Follow the instructions at https://docs.docker.com/docker-for-aws/ to setup a docker swarm cluster in AWS; 1x master and 1x work
+1. See https://github.com/shazChaudhry/docker-jenkins repo for instructions on how to run Jenkins in docker swarm mode. This docekr image includes [Blue Ocean plugin](https://jenkins.io/doc/book/blueocean/)
