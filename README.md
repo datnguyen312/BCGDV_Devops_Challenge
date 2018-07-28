@@ -69,13 +69,14 @@ Challenge tips:
 - Added "docker-compose.portainer.yml" that can be used to start [Portainer](https://portainer.io/) which is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
 
 ## Part 1 answer
-This section addresses how to deploy changes in this repository to an environment in AWS. This all need to be automated; push changes to this repo -> Jenkins job is triggered to build code -> build artifact is then deployed in AWS
-- Firstly, AWS infra will need to be setup. See ref no.2 blow for a link on how to setup a docker swarm cluster using "Docker Community Edition (CE) for AWS". Here are some of the benefits for such a cluster:
+This section addresses how to deploy changes in this repository to an environment in AWS. This all needs to be automated; push changes to this repo -> Jenkins job is triggered to build code -> docker image is then deployed in AWS
+- Firstly, AWS infra will need to be setup. See ref no. 2 blow for a link on how to setup a docker swarm cluster using "Docker Community Edition (CE) for AWS". Here are some of the benefits for such a cluster:
   - Native to Docker
   - Skip the boilerplate and maintenance work
   - Minimal, Docker-focused base
   - Self-cleaning and self-healing
   - Logging native to the platforms
+- Secondly, A Jenkins instance will need to be installed. This tool will help with build and deployment automation. See ref no. 3 below for a link that provides necessary installation instructions
 
 # References
 1. See https://github.com/shazChaudhry/vagrant repo for instructions on how to create Ubuntu VMs using Vagrant and how to start Portainer for local testing
