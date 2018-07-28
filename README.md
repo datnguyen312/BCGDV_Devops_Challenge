@@ -55,6 +55,7 @@ Challenge tips:
 - Moved Dockerfile outside of api folder
 - Removed .dockerignore file as it is not needed
 - Changed orchestration technology from being "docker compose" to "docker swarm mode"
+- Added a Jenkins compose file. Jenkins will act as a build & deployment automation engine
 - Made substential changes to docker-compose.yml
   - Changed compose file format from 3 to 3.6
   - Removed "links" as it is deprecated in the latest compose file format
@@ -76,9 +77,8 @@ This section addresses how to deploy code changes in this repository to a runtim
   - Minimal, Docker-focused base
   - Self-cleaning and self-healing
   - Logging native to the platforms
-- Secondly, A Jenkins instance will need to be installed. This tool will help with build and deployment automation via declarative syntext; pipeline-as-a-code. See ref no. 3 below for a link that provides necessary installation instructions
+- Secondly, A Jenkins instance will need to be installed. This tool will help with build and deployment automation via declarative syntext; pipeline-as-a-code. See start.sh file for instructions on how to start jenkins
 
 # References
 1. See https://github.com/shazChaudhry/vagrant repo for instructions on how to create Ubuntu VMs using Vagrant and how to start Portainer for local testing
 1. Follow the instructions at https://docs.docker.com/docker-for-aws/ to setup a docker swarm cluster in AWS; 1x master and 1x work
-1. See https://github.com/shazChaudhry/docker-jenkins repo for instructions on how to run Jenkins in docker swarm mode. This docekr image includes [Blue Ocean plugin](https://jenkins.io/doc/book/blueocean/)

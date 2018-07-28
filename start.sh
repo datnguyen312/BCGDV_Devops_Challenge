@@ -4,6 +4,13 @@ set -e
 # Start Portainer
 docker stack deploy --compose-file docker-compose.portainer.yml portainer
 
+# Start Jenkins
+echo "admin" | docker secret create jenkins-user -
+echo "admin" | docker secret create jenkins-pass -
+docker stack deploy --compose-file docker-compose.jenkins.yml jenkins
+docker stack services jenkins
+
+# Build BCGDV API docker iamge
 docker image build --no-cache \
 --tag bcgdv/api:latest --build-arg GIT_COMMIT=$(git log -1 --format=%H) .
 
