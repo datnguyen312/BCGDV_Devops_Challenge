@@ -1,0 +1,32 @@
+---
+version: 1
+rwmutex: {}
+interactions:
+- request:
+    body: ""
+    form: {}
+    headers: {}
+    url: http://api.airvisual.com/v2/nearest_city?lat=53.5&lon=-2.25&key=XN6S5LmLBiGTZFHTq
+    method: GET
+  response:
+    body: '{"status":"success","data":{"city":"Manchester","state":"Greater Manchester","country":"United
+      Kingdom","location":{"type":"Point","coordinates":[-2.239001,53.472077]},"current":{"weather":{"ts":"2018-02-21T14:00:00.000Z","hu":70,"ic":"04d","pr":1028,"tp":8,"wd":40,"ws":2},"pollution":{"ts":"2018-02-21T14:00:00.000Z","aqius":19,"mainus":"p1","aqicn":21,"maincn":"p1"}}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 21 Feb 2018 15:03:15 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    status: 200 OK
+    code: 200

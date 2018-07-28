@@ -1,0 +1,9 @@
+.DS_Store
+.git
+docker-compose.yml
+*.sh
+LICENSE
+README.md
+pkg
+bin
+vendor
