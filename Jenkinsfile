@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build API') {
       steps {
-        echo 'Building API'
+        sh 'docker image build --no-cache \
+            --tag bcgdv/api:latest --build-arg GIT_COMMIT=$(git log -1 --format=%H) .'
       }
     }
     stage('Deploy API') {
