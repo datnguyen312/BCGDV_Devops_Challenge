@@ -22,6 +22,7 @@ pipeline {
             --tag bcgdv/api:latest --build-arg GIT_COMMIT=$(git log -1 --format=%H) .'
       }
     }
+    
     stage('Deploy API') {
       steps {
       sh 'API_HOST_PORT=5000 docker stack deploy --compose-file docker-compose.yml airQuality'
