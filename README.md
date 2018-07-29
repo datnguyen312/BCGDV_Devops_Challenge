@@ -80,10 +80,10 @@ This section addresses how to deploy code changes in this repository to a runtim
 - Secondly, A Jenkins instance will need to be installed. This tool will help with build and deployment automation via declarative syntext; pipeline-as-a-code. See start.sh file for instructions on how to start jenkins
 - Thirdly, create a webhook in github repo that on a push event will trigger a build in Jenkins. Webhook URL format = "YourJenkinsURL/github-webhook/""
 <p align="center">
-  <img src="./pics/part_1.1.jpg" alt="CI / CD process" style="width: 450px;"/>
+  <img src="./pics/part_1.1.jpg" alt="CI / CD process" style="width: 600px;"/>
 </p>
 <p align="center">
-  <img src="./pics/stage_view_part_1.jpg" alt="CI stage view" style="width: 450px;"/>
+  <img src="./pics/stage_view_part_1.jpg" alt="CI stage view" style="width: 600px;"/>
 </p>
 
 # References
