@@ -16,14 +16,14 @@ services:
     environment:
       POSTGRES_PASSWORD_FILE: "/run/secrets/postgres-passwd"
     secrets:
-        - postgres-passwd
+      - postgres-passwd
 
   adminer:
     image: adminer:latest
     networks:
       - apiSDN
     ports:
-      - 8080:8080
+      - "${ADMINER_HOST_PORT:-8080}:8080"
 
 networks:
     apiSDN:

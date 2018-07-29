@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build API') {
       steps {
-        sh 'docker image build --no-cache             --tag bcgdv/api:latest --build-arg GIT_COMMIT=$(git log -1 --format=%H) .'
+        sh 'docker image build --no-cache --tag bcgdv/api:latest --build-arg GIT_COMMIT=$(git log -1 --format=%H) .'
       }
     }
     stage('Deploy API') {
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Test API') {
       steps {
-        echo 'Testing'
+        sh "docker exec -it airQuality_api.1.$(docker service ps -f 'name=airQuality_api.1' airQuality_api -q --no-trunc | head -n1) go test -v"
       }
     }
   }

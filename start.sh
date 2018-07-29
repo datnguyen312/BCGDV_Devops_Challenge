@@ -26,4 +26,6 @@ API_HOST_PORT=5000 docker stack deploy --compose-file docker-compose.yml airQual
 
 # Start second stack on a different API port number
 # NOTE: due to port conflict, adminer will need to be started on a different port or adminer will need to be disabled
-# API_HOST_PORT=5002 docker stack deploy --compose-file docker-compose.yml airQuality_2
+# export API_HOST_PORT=5002 docker
+# export ADMINER_HOST_PORT=8082
+# stack deploy --compose-file docker-compose.yml airQuality_2
