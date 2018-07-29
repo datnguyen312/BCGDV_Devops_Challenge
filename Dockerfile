@@ -8,5 +8,4 @@ RUN go install -v ./...
 
 CMD ["app"]
 
-
 EXPOSE 9090

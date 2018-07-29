@@ -1,5 +1,20 @@
 pipeline {
-  agent any
+
+  agent {
+    label {
+      label "master"
+    }
+  }
+  options {
+    // gitLabConnection('gitlab')
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    disableConcurrentBuilds()
+    timestamps()
+  }
+  triggers {
+    // gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+    pollSCM '@hourly'
+  }
   stages {
     stage('Build API') {
       steps {
@@ -9,7 +24,7 @@ pipeline {
     }
     stage('Deploy API') {
       steps {
-        echo 'Deploying API'
+      sh 'API_HOST_PORT=5000 docker stack deploy --compose-file docker-compose.yml airQuality'
       }
     }
   }
