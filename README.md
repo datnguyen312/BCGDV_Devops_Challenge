@@ -70,7 +70,7 @@ Challenge tips:
 - Added "docker-compose.portainer.yml" that can be used to start [Portainer](https://portainer.io/) which is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
 
 ## Part 1 answer
-This section addresses how to deploy code changes in this repository to a runtime environment in AWS. This all needs to be automated in CI / CD fashion; push changes to this repo -> a Jenkins job is triggered automatically to build code -> resultant docker image is then deployed in in a runtime in AWS
+This section addresses how to deploy code changes in this repository to a runtime environment in AWS. This all needs to be automated in CI / CD fashion; push changes to this repo -> a Jenkins job is triggered automatically to build code -> resultant docker image is then deployed in a runtime in AWS
 - Firstly, an AWS infra will need to be setup. See ref no. 2 blow for a link on how to setup a docker swarm cluster using "Docker Community Edition (CE) for AWS". Here are some of the benefits for such a cluster:
   - Native to Docker
   - Skip the boilerplate and maintenance work
@@ -79,6 +79,12 @@ This section addresses how to deploy code changes in this repository to a runtim
   - Logging native to the platforms
 - Secondly, A Jenkins instance will need to be installed. This tool will help with build and deployment automation via declarative syntext; pipeline-as-a-code. See start.sh file for instructions on how to start jenkins
 - Thirdly, create a webhook in github repo that on a push event will trigger a build in Jenkins. Webhook URL format = "YourJenkinsURL/github-webhook/""
+<p align="center">
+  <img src="./pics/part_1.1.jpg" alt="CI / CD process" style="width: 450px;"/>
+</p>
+<p align="center">
+  <img src="./pics/stage_view_part_1.jpg" alt="CI stage view" style="width: 450px;"/>
+</p>
 
 # References
 1. See https://github.com/shazChaudhry/vagrant repo for instructions on how to create Ubuntu VMs using Vagrant and how to start Portainer for local testing
