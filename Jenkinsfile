@@ -19,8 +19,13 @@ pipeline {
     stage('Test API') {
       steps {
         // sh 'docker exec -it airQuality_api.1.$(docker service ps -f \'name=airQuality_api.1\' airQuality_api -q --no-trunc | head -n1) go test -v'
-        sh 'docker run --rm --name bcgdv_api --network airQuality_apiSDN bcgdv/api:latest go test'
+        sh 'docker run --rm --name bcgdv_api --network=airQuality_apiSDN bcgdv/api:latest go test'
       }
+    }
+  }
+  post {
+    always {
+      archive "./**"
     }
   }
   options {

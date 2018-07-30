@@ -27,6 +27,7 @@ services:
 
 networks:
     apiSDN:
+      driver: overlay
       attachable: true
 
 secrets:
