@@ -89,6 +89,10 @@ This section addresses how to deploy code changes in this repository to a runtim
   <img src="./pics/stage_view_part_1.jpg" alt="CI stage view" style="width: 600px;"/>
 </p>
 
+### Improvements
+- Add a reverse proxy in front of API
+- Fix unit test error. See issue #1
+
 ## Response - Part 2
 It is assumed that infrastructure in AWS will be setup using "[Docker for AWS](https://docs.docker.com/docker-for-aws/why/)" tool which is based on AWS CloudFormation templates. This tool creates a Docker Swarm Mode cluster.
 
