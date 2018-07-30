@@ -23,11 +23,6 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      archiveArtifacts(artifacts: './*', fingerprint: true, onlyIfSuccessful: false, defaultExcludes: false)
-    }
-  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
     disableConcurrentBuilds()
