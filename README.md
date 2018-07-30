@@ -67,6 +67,9 @@ Challenge tips:
   - builds the api docker image and tags it as bcgdv/api:latest
   - Runs both api and db as two docker swarm mode services in a single stack
   - Shows an example how multiple stacks can be started. This means running multiple api versions at the same time
+  - This file also lists commands that start Jenkins and Portainer
+- Updated test.sh
+  - docker-compose is no longer used to run tests. The command in this file shows a stand alone docker container running tests.
 - Added "docker-compose.portainer.yml" that can be used to start [Portainer](https://portainer.io/) which is an open-source lightweight management UI which allows you to easily manage your Docker hosts or Swarm clusters.
 
 ## Part 1 answer

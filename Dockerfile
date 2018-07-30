@@ -1,5 +1,8 @@
 FROM golang
 
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
+
 WORKDIR /go/src/app
 COPY ./api/ .
 

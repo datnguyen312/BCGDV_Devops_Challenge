@@ -1,5 +1,4 @@
-#!/bin/sh 
+#!/bin/sh
 set -e
 
-docker-compose build
-docker-compose run --rm --no-deps api go test -v
+docker run --rm --name bcgdv_api --network=airQuality_apiSDN bcgdv/api:latest go test
