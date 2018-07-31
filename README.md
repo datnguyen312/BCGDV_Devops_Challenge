@@ -96,6 +96,7 @@ Once all services are deployed as part of challange 1, this is what you expect t
 ### Improvements
 - Add a reverse proxy in front of API
 - Fix unit test error. See issue #1
+- Remove password from source code. Use Docker secret management instead 
 
 ## Response - Part 2
 It is assumed that infrastructure in AWS will be setup using "[Docker for AWS](https://docs.docker.com/docker-for-aws/why/)" tool which is based on AWS CloudFormation templates. This tool creates a Docker Swarm Mode cluster.
